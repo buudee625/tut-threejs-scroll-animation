@@ -49,10 +49,9 @@ const geometry = new THREE.TorusGeometry(10, 1, 10, 40);
 const material = new THREE.MeshStandardMaterial({ color: 0xffc864 });
 
 // Creating a light source, refer to https://threejs.org/docs/#api/en/lights/PointLight
-const pointLight = new THREE.PointLight(0xffffff); // This is a point light with white light
+const pointLight = new THREE.PointLight(0xffffff, 0.75, 50); // This is a point light with white light
 const ambientLight = new THREE.AmbientLight(0xffffff);
-pointLight.position.set(25, -25, 5);
-
+pointLight.position.set(0, 20, 0);
 scene.add(pointLight, ambientLight);
 
 // 3) Declare the shape by combining the geometry and the material and then add it to the scene
@@ -103,7 +102,7 @@ scene.add(avatarCube);
 const moonTexture = new THREE.TextureLoader().load('img/moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('img/normal.jpg');
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.SphereGeometry(2, 32, 32),
   new THREE.MeshStandardMaterial({
     map: moonTexture,
     normalMap: normalTexture,
