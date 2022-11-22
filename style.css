@@ -1,0 +1,15 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+/* main {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  height: 500vh;
+} */
