@@ -109,8 +109,8 @@ const moon = new THREE.Mesh(
   })
 );
 scene.add(moon);
-moon.position.z = 15;
-moon.position.setX(-10);
+moon.position.z = 5;
+moon.position.setX(15);
 
 // Move the camera as users scroll
 // ===============================================
