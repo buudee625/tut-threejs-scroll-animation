@@ -13,8 +13,7 @@ To demo the app,
 5. Open `localhost:5173`
 
 ## Screenshot
-
-![screen demo](https://i.imgur.com/NdLtGcf.gif)
+![chrome-capture-2022-10-23](https://user-images.githubusercontent.com/50037462/203698153-b02cf05e-ee97-4edd-83f3-8f6b7d4cf99a.gif)
 
 ## Technology
 
