@@ -14,13 +14,9 @@ To demo the app,
 
 ## Screenshot
 
-<hr />
-
 ![screen demo](https://i.imgur.com/NdLtGcf.gif)
 
 ## Technology
-
-<hr />
 
 - JavaScript
 - Three.JS
@@ -28,7 +24,5 @@ To demo the app,
 - Vite
 
 ## Goal
-
-<hr />
 
 Not really much, this was an experiment to see how 3D rendering is done :D But I will try loading a custom 3D model I created in Vectary next!
