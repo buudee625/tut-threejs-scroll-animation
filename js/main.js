@@ -1,4 +1,4 @@
-import './style.css';
+import '../css/index.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -28,9 +28,14 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight); // setting canvas size
-camera.position.setZ(30); // position the camera
+// camera.position.setZ(5); // position the camera
 
 renderer.render(scene, camera); // render (draw) the graphics
+window.addEventListener('resize', () => {
+  renderer.setSize(window.innerWidth, window.innerHeight); // setting canvas size
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+});
 
 // Creating the 3D object
 // ===============================================
@@ -58,15 +63,15 @@ scene.add(pointLight, ambientLight);
 const torus = new THREE.Mesh(geometry, material); // mesh = geometry + material
 scene.add(torus);
 
-// Add Helpers
+// Helpers
 // ===============================================
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper);
+// const lightHelper = new THREE.PointLightHelper(pointLight);
+// const gridHelper = new THREE.GridHelper(200, 50);
+// scene.add(lightHelper, gridHelper);
 
-// Add OrbitControl
+// OrbitControl Helper
 // ===============================================
-const OrbControl = new OrbitControls(camera, renderer.domElement);
+// const OrbControl = new OrbitControls(camera, renderer.domElement);
 
 // Adding stars
 // ===============================================
@@ -109,14 +114,15 @@ const moon = new THREE.Mesh(
   })
 );
 scene.add(moon);
-moon.position.z = 5;
-moon.position.setX(15);
+moon.position.x = 5;
+moon.position.y = 3;
+moon.position.z = -7;
 
 // Move the camera as users scroll
 // ===============================================
 function moveCamera() {
-  const t = document.body.getBoundingClientRect().top;
-  console.log(t);
+  const t = document.body.getBoundingClientRect().top - 1;
+  // console.log(t);
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
@@ -126,7 +132,6 @@ function moveCamera() {
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
-
   camera.rotation.y = t * -0.0002;
 }
 
@@ -139,7 +144,7 @@ function animate() {
   torus.rotation.x += 0.001;
   torus.rotation.y += 0.001;
   torus.rotation.z += 0.001;
-  OrbControl.update();
+  // OrbControl.update();
   renderer.render(scene, camera);
 }
 animate();
