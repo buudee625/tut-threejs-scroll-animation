@@ -47,11 +47,11 @@ main > :not(:last-child) {
 .footer {
   display: flex;
   justify-content: center;
+  grid-column: 1/4;
   font-family: Helvetica, sans-serif;
   margin-top: 3rem;
   height: 5rem;
   background: #fff;
-  grid-column: 1 / 4;
 }
 
 .footer > li {
